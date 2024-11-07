@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    volumes:
+      - ./nextjs-dashboard:/nextjs-dashboard
+    ports:
+      - "8000:3000"
