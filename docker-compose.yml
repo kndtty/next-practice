@@ -5,3 +5,13 @@ services:
       - ./nextjs-dashboard:/nextjs-dashboard
     ports:
       - "8000:3000"
+    environment:
+      - POSTGRES_URL=postgres://postgres:example@db:5432/postgres
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
